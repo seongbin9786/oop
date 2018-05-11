@@ -1,0 +1,30 @@
+{
+"files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.idea": true,
+    "**/yarn.lock": true,
+    "**/tmp": true,
+    "**/build": true,
+    "**/.vscode": false,
+},
+"search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/coverage": true,
+    "**/build": true,
+    "**/Pods": true,
+    "**/*.xcodeproj": true,
+    "**/*.xcworkspace": true
+},
+"editor.formatOnSave": true,
+"editor.tabSize": 2,
+"html.suggest.html5": true,
+"eslint.run": "onSave",
+"eslint.autoFixOnSave": true,
+}
