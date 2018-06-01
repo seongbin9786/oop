@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>코드스피츠75 - ES6+ 디자인패턴과 뷰패턴 #2</title>
+</head>
+<body>
+    <div id="list"></div>
+
+    <template id="navbtn_template">
+        <button style="font-weight: normal;">[content]</button>
+    </template>
+
+    <template id="navbtn_selected_template">
+        <button style="font-weight: bold;">[content]</button>
+    </template>
+
+    <template id="list_template">
+        <h2>[title]</h2>
+    </template>
+
+    <template id="item_completed_template">
+        <h3 style="text-decoration: line-through;">[title]</h3>
+        <time>[time]</time>
+        <button class="toggleBtn">complete</button>
+        <button class="removeBtn">remove</button>
+    </template>
+
+    <template id="item_template">
+        <h3 style="text-decoration: none;">[title]</h3>
+        <time>[time]</time>
+        <button class="toggleBtn">progress</button>
+        <button class="removeBtn">remove</button>
+    </template>
+
+    <template id="item_sub_template">
+        <section>
+            <input type="text">
+            <button>addTask</button>
+        </section>
+    </template>
+
+    <script src='4_템플릿_DOM_버전.js'></script>
+</body>
+</html>
