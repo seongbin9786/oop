@@ -1,5 +1,8 @@
 // Marker 인터페이스인가?
 const Controller = class {
+    constructor(isSingleton) {
+        if(isSingleton) return singleton.getInstance(this);
+    }
 };
 
 const Singleton = class extends WeakMap {
@@ -214,7 +217,7 @@ const HomeController = class extends Controller {
 
         // ㅋㅋ 이것때문에 몇 시간을 날린거임?
         // addController를 계속하기 때문에 계속 notify 된다.
-        // model.addController(this);
+        model.addController(this);
         return view.render(model);
     }
     
@@ -224,7 +227,7 @@ const HomeController = class extends Controller {
         const model = new HomeModel(true).get(id);
 
         // addController를 계속하기 때문에 계속 notify 된다.
-        // model.addController(this);
+        model.addController(this);
         return view.render(model);
     }
 
@@ -247,13 +250,11 @@ const HomeController = class extends Controller {
         const model = new HomeModel(true);
         const { value } = e.target.previousElementSibling;
         model.add(new HomeDetailModel(idGenerator++, value, ''));
-        this.$list();
     }
 
     $remove(id) { 
         const model = new HomeModel(true);
         model.remove(id);
-        this.$list();
     }
 
     $removeDetail(id) {
@@ -262,11 +263,8 @@ const HomeController = class extends Controller {
 
     listen(model) {
         switch(true) {
-        case is(model, HomeModel): 
-            console.log('its the case!');
-            return this.$list();
-        case is(model, HomeDetailModel): 
-            return this.$detail(model.id);
+        case is(model, HomeModel): return this.$list();
+        case is(model, HomeDetailModel): return this.$detail(model.id);
         }
     }
 };
